@@ -1,13 +1,13 @@
-package de.ait.take_me_home;
+package de.ait.cohort34;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TakeMeHomeApplication {
+public class PetProjectApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TakeMeHomeApplication.class, args);
+        SpringApplication.run(PetProjectApplication.class, args);
     }
 
 }
