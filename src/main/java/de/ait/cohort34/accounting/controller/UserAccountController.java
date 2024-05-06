@@ -4,10 +4,8 @@ import ait.cohort34.accounting.dto.UserDto;
 import ait.cohort34.accounting.dto.UserEditDto;
 import ait.cohort34.accounting.dto.UserRegisterDto;
 import ait.cohort34.accounting.service.UserAccountService;
-import ait.cohort34.security.auth.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
@@ -18,14 +16,12 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserAccountController {
     final UserAccountService userAccountService;
-    private final AuthenticationManager authenticationManager;
-
-    private final JwtTokenProvider tokenProvider;
 
     @PostMapping("/register")
     public UserDto register(@RequestBody UserRegisterDto userRegisterDto) {
         return userAccountService.register(userRegisterDto);
     }
+
     @PostMapping("/login")
     public UserDto login(Principal principal) {
         return userAccountService.getUser(principal.getName());
